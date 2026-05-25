@@ -1,0 +1,23 @@
+name: CyberPlay CI/CD
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set Permission
+        run: chmod +x monitoring.sh
+
+      - name: Run Monitoring Script
+        run: ./monitoring.sh
+
+      - name: Show Log
+        run: cat logs/cyberplay.log
