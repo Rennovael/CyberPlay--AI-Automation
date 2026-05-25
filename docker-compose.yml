@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  cyberplay:
+    build: .
+    container_name: cyberplay-ai
+    volumes:
+      - ./logs:/app/logs
